@@ -31,4 +31,8 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'firebase' => [
+        'fcm_key' => env('API_FCM_KEY')
+    ]
+
 ];

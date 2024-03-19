@@ -41,3 +41,11 @@ Route::prefix('/auth')->controller(UserController::class)->group(function () {
     Route::post('/login', 'login');
     Route::post('/logout', 'logout')->middleware('auth:sanctum');
 });
+
+$username = "ki2024";
+$password = "ki2024mid";
+Route::get('/basic-auth', function(Request $request){
+    $token = $request->header('authorization');
+    $token = str_replace('Basic', '', $token);
+    return base64_decode($token);
+});
